@@ -2,7 +2,17 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:output method="html" doctype-system="legacy-compat" encoding="utf-8"/>
 <xsl:template match="/jardinBotanico/actividades">
-<html lang="es">   
+    
+<!--
+      Autor : Carles Rodriguez i Rovira
+      Asignatura : LMGSI
+      Unidad UD 4
+      Tarea : TaEv 02 - XSLT
+      Ver website : https://b68toftir.github.io/jardinbotanico/
+      Fecha : 2025-12-01
+-->  
+    
+  <html lang="es">   
       
   <!-- Variable para el mes -->
   <xsl:variable name="mes" select="'11'"/>  
