@@ -14,7 +14,11 @@
 -->    
     
   <html lang="es">
-    
+      
+    <!-- Variable para la hora y la trasformamos de String a Integer-->
+    <xsl:variable name="hora_String" select="'10:00'"/>
+    <xsl:variable name="hora_int" select="number(translate($hora_String, ':', ''))"/>
+
     <head>
       <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
       <meta charset="utf-8"/>
@@ -41,7 +45,7 @@
           </tr>
           
           <!-- Uso una rutina, que elimina los dos puntos de la hora y lo pasa a String, luego lo pasa a numero y compara si es 1000(10:00) o menor -->
-          <xsl:apply-templates select="jardinBotanico/zonas/zona[number(translate(horarioapertura, ':', '')) &lt;= 1000]"/>
+            <xsl:apply-templates select="jardinBotanico/zonas/zona[number(translate(horarioapertura, ':', '')) &lt;= $hora_int]"/>
         </table>
         
       </main>
